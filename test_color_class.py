@@ -1,21 +1,22 @@
-
 # Start by importing our `rgb.py` file which we plan on testing
 import rgb
 
 SAMPLE_HAPPY_COLOURS = {
-        "#000000": {"r": 0,   "g": 0,   "b": 0},
-        "#0FA5FF": {"r": 15,  "g": 165, "b": 255},
-        "#172957": {"r": 23,  "g": 41,  "b": 87},
-        "#800000": {"r": 128, "g": 0,   "b": 0},
-        "#F42069": {"r": 244, "g": 32,  "b": 105},
-        "#f8c6fd": {"r": 248, "g": 198, "b": 253},
-        "#ffFFff": {"r": 255, "g": 255, "b": 255},
-    }
+    "#000000": {"r": 0, "g": 0, "b": 0},
+    "#0FA5FF": {"r": 15, "g": 165, "b": 255},
+    "#172957": {"r": 23, "g": 41, "b": 87},
+    "#800000": {"r": 128, "g": 0, "b": 0},
+    "#F42069": {"r": 244, "g": 32, "b": 105},
+    "#f8c6fd": {"r": 248, "g": 198, "b": 253},
+    "#ffFFff": {"r": 255, "g": 255, "b": 255},
+}
+
 
 class TestPureFunctions:
     def test_hex_to_rgb(self):
         for k, v in SAMPLE_HAPPY_COLOURS.items():
             assert v == rgb.hex_to_rgb(k)
+
 
 class TestColourClassSixHappy:
     """
