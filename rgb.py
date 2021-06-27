@@ -12,8 +12,15 @@
 
 
 def hex_to_rgb(hex_code):
-    pass
-
+    """hi here is the code"""
+    r_str = hex_code[1:3]
+    g_str = hex_code[3:5]
+    b_str = hex_code[5:]
+    return {
+        "r": int(r_str, base=16), 
+        "g": int(g_str, base=16),
+        "b": int(b_str, base=16)
+    }
 
 class Colour:
     pass
