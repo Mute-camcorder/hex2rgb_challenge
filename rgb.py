@@ -12,6 +12,7 @@
 
 
 def hex_to_rgb(hex_code):
+    """hi here is the code"""
     r_str = hex_code[1:3]
     g_str = hex_code[3:5]
     b_str = hex_code[5:]
