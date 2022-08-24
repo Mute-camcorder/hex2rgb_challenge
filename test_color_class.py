@@ -71,3 +71,50 @@ class TestColourClassSixHappy:
         for hex_code, rgb_dict in SAMPLE_HAPPY_COLOURS.items():
             c = rgb.Colour(rgb_dict=rgb_dict)
             assert c.to_rgb_dict() == rgb_dict
+
+
+class TestColourClassComparisons:
+    """
+    This class tests the `Colour` class, and only tests that two colours with the same values compare equally.
+    """
+
+    def test_same_hex_code_colours_compare_equal(self):
+        """
+        Can we instantiate two Colours with the same hex code, and have them compare equal?
+        """
+        for hex_code, rgb_dict in SAMPLE_HAPPY_COLOURS.items():
+            c1 = rgb.Colour(hex_code=hex_code)
+            c2 = rgb.Colour(hex_code=hex_code)
+            assert c1 == c2
+
+    def test_same_rgb_dict_colours_compare_equal(self):
+        """
+        Can we instantiate two Colours with the same rgb dict, and have them compare equal?
+        """
+        for hex_code, rgb_dict in SAMPLE_HAPPY_COLOURS.items():
+            c1 = rgb.Colour(rgb_dict=rgb_dict)
+            c2 = rgb.Colour(rgb_dict=rgb_dict)
+            assert c1 == c2
+
+    def test_matching_colours_hex_on_left_rgb_on_right_compare_equal(self):
+        """
+        Can we instantiate two equal Colours with both input types, and have them compare equal?
+        """
+        for hex_code, rgb_dict in SAMPLE_HAPPY_COLOURS.items():
+            c1 = rgb.Colour(hex_code=hex_code)
+            c2 = rgb.Colour(hex_code=hex_code)
+            assert c1 == c2
+
+    def test_matching_colours_hex_on_right_rgb_on_left_compare_equal(self):
+        """
+        Can we instantiate two equal Colours with both input types, and have them compare equal?
+        """
+        for hex_code, rgb_dict in SAMPLE_HAPPY_COLOURS.items():
+            c1 = rgb.Colour(hex_code=hex_code)
+            c2 = rgb.Colour(rgb_dict=rgb_dict)
+            assert c1 == c2
+
+    def test_different_colours_compare_not_equal(self):
+        c1 = rgb.Colour(hex_code="#010203")
+        c2 = rgb.Colour(hex_code="#01020F")
+        assert c1 != c2
